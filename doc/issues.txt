@@ -1,5 +1,9 @@
 ONGOING:
--None
+  -None.
 
 RESOLVED:
--None
+  -Issue #000005. New scores are not updated for the negatives, instead adding the previous score that was entered.
+  -Issue #000004. Negatives are not taken away at the end.
+  -Issue #000003. If a non-int is entered for a player's score in a round, the program will crash.
+  -Issue #000002. If the winning score is held by two players, only the first found will be recorded as the winner.
+  -Issue #000001. If an out of range response or non-int response is entered for the new round test, the program crashes.
