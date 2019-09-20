@@ -1,1 +1,45 @@
+A "+" indicates something has been added.
+A "-" indicates something has been removed.
+A "~" indicates something has been edited.
+A ">" indicates an issue has been resolved.
+A "<" indicates an issue has been detected but not resolved.
 
+Version 0.3 Beta Notes [10/09/19]:
+  +Added classes to store player attributes "name", "colour" and "score".
+  +Added a title at the beginning of the project.
+
+Version 0.2.1 Beta Notes [26/08/19]:
+  +Added comments to the code.
+  ~Updated winner algorithm to include mutliple winners.
+
+Version 0.2 Beta Notes [16/04/19]:
+  +Added a README.txt file.
+  +Added a system that asks for negatives to be entered once a game is over.
+  >Resolved issue #000004.
+  >Resolved issue #000005.
+
+Version 0.1.2 Beta Notes [10/03/19]:
+  >Resolved issue #000002.
+  >Resolved issue #000003.
+  <Identified issue #000004.
+  <Identified issue #000005.
+
+Version 0.1.1 Beta Notes [09/03/19]:
+  ~Improved validation algorithm.
+  <Identified issue #000003.
+
+Version 0.1 Beta Notes [09/03/19]:
+  +Added an algorithm that calculates the winner.
+  <Identified issue #000002.
+
+Version 0.3 Alpha Notes [08/03/19]:
+  +Added validation for all user inputs.
+  +Added some extra documentation.
+  >Resolved issue #000001.
+
+Version 0.2 Alpha Notes [08/03/19]:
+  +Finished the initial program.
+  <Identified issue #000001.
+
+Version 0.1 Alpha Notes [07/03/19]:
+  +Created the initial program and documentation.
