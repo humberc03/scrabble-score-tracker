@@ -4,9 +4,11 @@ A "~" indicates something has been edited.
 A ">" indicates an issue has been resolved.
 A "<" indicates an issue has been detected but not resolved.
 
-Version 0.3 Beta Notes [10/09/19]:
+Version 0.3 Beta Notes [21/09/19]:
   +Added classes to store player attributes "name", "colour" and "score".
   +Added a title at the beginning of the project.
+  +Assigned each player a colour and an id number.
+  ~Limited the number of players to between 2 and 4.
 
 Version 0.2.1 Beta Notes [26/08/19]:
   +Added comments to the code.
