@@ -118,7 +118,7 @@ def setupPlayers():
   #gets the number of players for the game
   cprint("SCRABBLE SCORE TRACKER", "cyan", attrs=['bold'])
   x = str(input("How many players? \n >> "))
-  x = int(oneNumValidate(x,"a number that is at least 2.",2))
+  x = int(twoNumValidate(x,"a number between 2 and 4, inclusive.",2,4))
 
   #gets the names of the players
   for i in range(x):
