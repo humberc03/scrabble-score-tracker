@@ -2,8 +2,6 @@ import time
 from termcolor import cprint
 import lachpack
 
-#Top-Level
-
 #sets up the players
 players = lachpack.setupPlayers()
 
@@ -26,4 +24,3 @@ for i in range(0, len(winners)):
   pos = lachpack.binarySearch(players, winids[i])
   print("\n -", end="", flush=True)
   cprint(winners[i], players[pos].colour)
-#Top-Level
