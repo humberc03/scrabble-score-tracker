@@ -4,11 +4,39 @@ from termcolor import cprint
 
 #Classes
 class player():
-  def __init__(self, name, colour, score):
+  def __init__(self, name, colour, score, idnum):
     self.name = name
     self.colour = colour
     self.score = score
+    self.idnum = idnum
 #Classes
+
+#Sort & Search
+def binarySearch(array, target):
+
+  #sets up the search
+  first = 0
+  last = len(array)-1
+  found = False
+
+  #defines the midpoint of the array
+  while first <= last and not found:
+    midpoint = (first + last)//2
+
+    #detects if the current midpoint is equal to the target
+    if array[midpoint].idnum == target:
+      found = True
+    
+    #if not, and target is LESS than midpoint, switches to first half of list, if it is GREATER than midpoint, switches to second half
+    else:
+      if target < array[midpoint].idnum:
+        last = midpoint - 1
+      else:
+        first = midpoint + 1
+	
+  #returns location of target
+  return midpoint
+#Sort & Search
 
 #Validation
 def subValidateStart(extender):
@@ -60,6 +88,7 @@ def twoNumSubValidate(x,extender,numOne,numTwo):
 def calculateWinner(players):
   maxScore = 0
   winners = []
+  winids = []
 
   #searches list for the player with the highest score
   for i in range(len(players)):
@@ -67,15 +96,18 @@ def calculateWinner(players):
     #if multiple players have the highest score, all are added as winners
     if players[i].score == maxScore:
       winners.append(players[i].name)
+      winids.append(players[i].idnum)
 
     #if a new highest score is found, the old one is overwritten and all winners are removed from the win list
     elif players[i].score > maxScore:
       maxScore = players[i].score
       winners.clear()
+      winids.clear()
       winners.append(players[i].name)
+      winids.append(players[i].idnum)
 
   #returns the list of winners
-  return winners
+  return winners, winids
 #End
 
 #Setup
@@ -97,7 +129,7 @@ def setupPlayers():
       if not colour in colours:
         colour = str(input("Please choose from blue, green, red, or yellow, with no capitals. \n >> "))
     score = 0
-    y = player(name, colour, score)
+    y = player(name, colour, score, i)
     players.append(y)
 
   #returns the list of players
@@ -176,13 +208,17 @@ game(players)
 #prints the score of each player
 print("Results: ")
 for i in range(0, len(players)):
-  print("\n -" + players[i].name + ": " + str(players[i].score))
+  print("\n -", end="", flush=True)
+  cprint(players[i].name, players[i].colour, end="", flush=True)
+  print(": " + str(players[i].score))
 
 #calculates the winners
-winners = calculateWinner(players)
+winners, winids = calculateWinner(players)
 
 #prints the list of winners
 print("\nWinner(s): ")
 for i in range(0, len(winners)):
-  print("\n -" + winners[i])
+  pos = binarySearch(players, winids[i])
+  print("\n -", end="", flush=True)
+  cprint(winners[i], players[pos].colour)
 #Top-Level
