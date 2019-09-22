@@ -2,16 +2,13 @@
 
 <html>
   <head>
-    <script type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.7.5/brython_stdlib.js">
-    </script>
     <title>
       Scrabble Score Tracker
     </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
   </head>
-  <body onload="brython()">
+  <body>
     <h1>
       Scrabble Score Tracker (Version 0.3 Beta)
     </h1>
@@ -22,7 +19,16 @@
         <a href="https://github.com/MurdoMaclachlan/scrabble-score-tracker">GitHub Repository</a>
       </button>
     </p>
-    <script type="text/python">
-    import browser</script>
+    <script type="text/javascript" src="js/runPy.js">
+    </script>
+    <!--<?php
+      $command = escapeshellcmd('main.py');
+      $output = shell_exec($command);
+      echo $output;
+
+      this may be redundant, kept just in case.
+
+      completely removed brython module, as it seems it would require all the python to be in the html page
+    ?>-->
   </body>
 </html>
