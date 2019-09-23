@@ -33,6 +33,7 @@
       <script type="text/javascript" src="js/runPy.js">
       </script>
       <?php
+        echo "Hello world";
         $command = escapeshellcmd('main.py');
         $output = shell_exec($command);
         echo $output;
