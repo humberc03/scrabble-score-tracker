@@ -6,10 +6,25 @@
     <meta name="keywords" content="Python,Flask,HTML,CSS">
     <meta name="author" content="Murdo Maclachlan">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> A page </title>
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <title> Scrabble Score Tracker </title>
   </head>
   <body>
-    <h1></h1>
-    <p></p>
+    <h1> Scrabble Score Tracker </h1>
+        <p> Please enter the details for player {player number} </p>
+        <div class="form">
+          <form>
+            Name:</br>
+            <input type="text" name="name"></br>
+            Colour:</br>
+            <select name="colour" size="4">
+              <option value="blue">Blue</option></br>
+              <option value="green">Green</option></br>
+              <option value="red">Red</option></br>
+              <option value="yellow">Yellow</option>
+            </select></br></br>
+            <input type="submit">
+          </form>
+        </div>
   </body>
 </html>
