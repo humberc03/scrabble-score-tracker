@@ -23,6 +23,34 @@ p {
   color: white;
 }
 
+form {
+  align: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+}
+
+input {
+  align: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+}
+
+select {
+  align: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+}
+
+option {
+  align: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+}
+
 /* classes */
 .main {
   margin-left: 160px;
@@ -57,10 +85,10 @@ p {
   color: black;
   display: block;
   text-shadow:
-    -1px -1px 0 white,
-    1px -1px 0 white,
-    -1px 1px 0 white,
-    1px 1px 0 white;
+    -0.5px -0.5px 0 white,
+    0.5px -0.5px 0 white,
+    -0.5px 0.5px 0 white,
+    0.5px 0.5px 0 white;
 }
 
 .sidenav a:hover {
@@ -72,7 +100,9 @@ p {
   .sidenav a {font-size: 18px;}
 }
 
-/* ids */
-#Description {
-  background-color: black;
+.form {
+  align: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
 }
