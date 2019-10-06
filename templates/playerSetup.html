@@ -6,23 +6,22 @@
     <meta name="keywords" content="Python,Flask,HTML,CSS">
     <meta name="author" content="Murdo Maclachlan">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="static/stylesheet.css">
     <title> Scrabble Score Tracker </title>
   </head>
   <body>
     <h1> Scrabble Score Tracker </h1>
-        <p> Please enter the details for player {player number} </p>
+        <p> Please enter the details for player {{ i }}. </p>
         <div class="form">
-          <form>
+          <form action="/setup" method="post">
+            <input type="hidden" name="number" value={{ x }}>
             Name:</br>
             <input type="text" name="name"></br>
             Colour:</br>
-            <select name="colour" size="4">
-              <option value="blue">Blue</option></br>
-              <option value="green">Green</option></br>
-              <option value="red">Red</option></br>
-              <option value="yellow">Yellow</option>
-            </select></br></br>
+            <input type="radio" name="colour" value="blue">Blue</br>
+            <input type="radio" name="colour" value="green">Green</br>
+            <input type="radio" name="colour" value="red">Red</br>
+            <input type="radio" name="colour" value="yellow">Yellow</br></br>
             <input type="submit">
           </form>
         </div>
