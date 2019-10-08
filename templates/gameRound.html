@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="A scrabble score tracking program">
+    <meta name="keywords" content="Python,Flask,HTML,CSS">
+    <meta name="author" content="Murdo Maclachlan">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="static/stylesheet.css">
+    <title> Scrabble Score Tracker </title>
+  </head>
+  <body>
+    <h1> Scrabble Score Tracker </h1>
+        <p> Country roads </p>
+        <div class="form">
+          <form action="/setup" method="post">
+            <input type="hidden" name="loop" value={{ loop }}>
+            <input type="{{ type1 }}" name="{{ input1 }}" required><br>
+            <input type="{{ type2 }}" name="{{ input2 }}" required><br>
+            <input type="{{ type3 }}" name="{{ input3 }}" required><br>
+            <input type="{{ type4 }}" name="{{ input4 }}" required><br>
+            <input type="submit">
+          </form>
+        </div>
+  </body>
+</html>
