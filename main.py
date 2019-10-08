@@ -1,26 +1,51 @@
-import time
-from termcolor import cprint
+#!/usr/bin/env python3
+from flask import Flask, render_template, request
 import lachpack
 
-#sets up the players
-players = lachpack.setupPlayers()
+app = Flask(__name__)
 
-#activates the game
-lachpack.game(players)
+@app.route("/")
+@app.route("/index")
+def index():
+    global i,setupDone
+    setupDone = False
+    i = 1
+    return render_template("index.html")
 
-#prints the score of each player
-print("Results: ")
-for i in range(0, len(players)):
-  print("\n -", end="", flush=True)
-  cprint(players[i].name, players[i].colour, end="", flush=True)
-  print(": " + str(players[i].score))
+@app.route("/setup", methods=["POST"])
+def setup():
+    global i,setupDone
+    x = int(request.form["number"])
+    if setupDone == True:
+        lachpack.doSetup(players, i)
+        i += 1
+    if i > x:
+        loop = True
+        global totalScores
+        totalScores = [0]*len(players)
+        global scoreInputs
+        global inputTypes
+        scoreInputs = []
+        inputTypes = []
+        for i in range(4):
+            if i <= len(players)-1:
+                scoreInputs.append(players[i].name)
+                inputTypes.append("number")
+            else:
+                scoreInputs.append("nil" + str(i))
+                inputTypes.append("hidden")
+        return render_template("gameRound.html", loop=loop, input1=scoreInputs[0], input2=scoreInputs[1], input3=scoreInputs[2], input4=scoreInputs[3], type1=inputTypes[0], type2=inputTypes[1], type3=inputTypes[2], type4=inputTypes[3])
+    else:
+        setupDone = True
+        return render_template("playerSetup.html", i=i, x=str(x))
 
-#calculates the winners
-winners, winids = lachpack.calculateWinner(players)
+@app.route("/game", methods=["POST"])
+def game():
+    while loop == True:
+        for i in range(len(players)):
+            players[i].score = request.form[players[i].name]
+        return render_template("gameRound.html", loop=loop, input1=scoreInputs[0], input2=scoreInputs[1], input3=scoreInputs[2], input4=scoreInputs[3])
 
-#prints the list of winners
-print("\nWinner(s): ")
-for i in range(0, len(winners)):
-  pos = lachpack.binarySearch(players, winids[i])
-  print("\n -", end="", flush=True)
-  cprint(winners[i], players[pos].colour)
+if __name__ == "__main__":
+    players = []
+    app.run(host = "localhost", port = 3000)

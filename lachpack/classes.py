@@ -1,6 +1,6 @@
-class player():
-  def __init__(self, name, colour, score, idnum):
+class Players():
+  def __init__(self, name, colour, score, i):
     self.name = name
     self.colour = colour
     self.score = score
-    self.idnum = idnum
+    self.idnum = i
