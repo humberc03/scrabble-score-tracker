@@ -11,14 +11,21 @@
   </head>
   <body>
     <h1> Scrabble Score Tracker </h1>
-        <p> Country roads </p>
+      <p>Please input each player's score for this round.</p>
         <div class="form">
-          <form action="/setup" method="post">
+          <form action="/game" method="post">
             <input type="hidden" name="loop" value={{ loop }}>
-            <input type="{{ type1 }}" name="{{ input1 }}" required><br>
-            <input type="{{ type2 }}" name="{{ input2 }}" required><br>
-            <input type="{{ type3 }}" name="{{ input3 }}" required><br>
-            <input type="{{ type4 }}" name="{{ input4 }}" required><br>
+            <p class="{{ colour1 }}">{{ input1 }}</p></br>
+            <input type="{{ type1 }}" name="{{ input1 }}" required></br>
+            <p class="{{ colour2 }}">{{ input2 }}</p></br>
+            <input type="{{ type2 }}" name="{{ input2 }}" required></br>
+            <p class="{{ colour3 }}">{{ input3 }}</p></br>
+            <input type="{{ type3 }}" name="{{ input3 }}" required></br>
+            <p class="{{ colour4 }}">{{ input4 }}</p></br>
+            <input type="{{ type4 }}" name="{{ input4 }}" required></br>
+            Continue to another round?</br>
+            <input type="radio" name="continue" value="True" required>Yes</br>
+            <input type="radio" name="continue" value="False" required>No</br>
             <input type="submit">
           </form>
         </div>
