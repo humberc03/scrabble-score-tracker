@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from flask import Flask, render_template, request
-import lachpack
+import libsst
 
 app = Flask(__name__)
 
@@ -17,7 +17,7 @@ def setup():
     global i,setupDone,players
     x = int(request.form["number"])
     if setupDone == True:
-        lachpack.doSetup(players, i)
+        libsst.doSetup(players, i)
         i += 1
     if i > x:
         loop = True
@@ -60,7 +60,7 @@ def end():
     global inputTypes,colours,players,breaks
     for i in range(len(players)):
         players[i].score = players[i].score - int(request.form[players[i].name])
-    players,winners,winscores = lachpack.calculateWinner(players)
+    players,winners,winscores = libsst.calculateWinner(players)
     listPlayers = []
     listScores = []
     winColours = []
@@ -84,7 +84,7 @@ def end():
             dashes.append("")
 
         if i <= len(winners)-1:
-            pos = lachpack.linearSearch(players, winners[i])
+            pos = libsst.linearSearch(players, winners[i])
             listWinners.append(players[pos].name + ": ")
             winnerScores.append(str(players[pos].score))
             winColours.append(players[pos].colour)
