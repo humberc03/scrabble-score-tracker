@@ -11,19 +11,19 @@
   </head>
   <body>
     <h1> Scrabble Score Tracker </h1>
-      <p>RESULTS:</br>
-        All Scores:
-        -<span class={{ colour1 }}>{{ player1 }}</span>{{ score1 }}
-        -<span class={{ colour2 }}>{{ player2 }}</span>{{ score2 }}
-        -<span class={{ colour3 }}>{{ player3 }}</span>{{ score3 }}
-        -<span class={{ colour4 }}>{{ player4 }}</span>{{ score4 }}
-      </p></br>
+      <p>RESULTS:</br></br>
+        All Scores:</br>
+        {{ dash1 }}<span class={{ colour1 }}>{{ player1 }}</span>{{ score1 }}{{ break1|safe }}
+        {{ dash2 }}<span class={{ colour2 }}>{{ player2 }}</span>{{ score2 }}{{ break2|safe }}
+        {{ dash3 }}<span class={{ colour3 }}>{{ player3 }}</span>{{ score3 }}{{ break3|safe }}
+        {{ dash4 }}<span class={{ colour4 }}>{{ player4 }}</span>{{ score4 }}{{ break4|safe }}
+      </p>
       <p>
-        Winners:
-        -<span class={{ wcolour1 }}>{{ winner1 }}</span>{{ wscore1 }}
-        -<span class={{ wcolour1 }}>{{ winner2 }}</span>{{ wscore2 }}
-        -<span class={{ wcolour1 }}>{{ winner3 }}</span>{{ wscore3 }}
-        -<span class={{ wcolour1 }}>{{ winner4 }}</span>{{ wscore4 }}
+        Winners:</br>
+        {{ wdash1 }}<span class={{ wcolour1 }}>{{ winner1 }}</span>{{ wscore1 }}{{ winbr1|safe }}
+        {{ wdash2 }}<span class={{ wcolour2 }}>{{ winner2 }}</span>{{ wscore2 }}{{ winbr2|safe }}
+        {{ wdash3 }}<span class={{ wcolour3 }}>{{ winner3 }}</span>{{ wscore3 }}{{ winbr3|safe }}
+        {{ wdash4 }}<span class={{ wcolour4 }}>{{ winner4 }}</span>{{ wscore4 }}{{ winbr4|safe }}
       </p>
   </body>
 </html>
