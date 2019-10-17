@@ -1,8 +1,4 @@
 /* predefined tag changes */
-a {
-  color: black;
-  font-style: normal;
-}
 
 body {
   background-color: black;
@@ -55,17 +51,6 @@ option {
 }
 
 /* classes */
-.main {
-  margin-left: 160px;
-  padding: 0px 10px;
-}
-
-.para {
-  margin-bottom: 1%;
-  margin-left: 2%;
-  margin-right: 2%;
-  margin-top: 1%;
-}
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
